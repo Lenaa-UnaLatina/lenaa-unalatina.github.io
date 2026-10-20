@@ -1,210 +1,181 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenaa | Una Latina</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+body {
+        background-color: #0a0a0f;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        overflow-x: hidden;
+    }
 
-        body {
-            background-color: #0a0a0f;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            overflow-x: hidden;
-        }
+    body::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255,0,127,0.2) 0%, rgba(0,0,0,0) 70%);
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        animation: pulse 4s infinite alternate;
+    }
 
-        /* Efecto de luz neón de fondo */
-        body::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,0,127,0.2) 0%, rgba(0,0,0,0) 70%);
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-            animation: pulse 4s infinite alternate;
-        }
+    @keyframes pulse {
+        0% { transform: translateX(-50%) scale(0.8); opacity: 0.5; }
+        100% { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
+    }
 
-        @keyframes pulse {
-            0% { transform: translateX(-50%) scale(0.8); opacity: 0.5; }
-            100% { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
-        }
+    .container {
+        max-width: 500px;
+        width: 100%;
+        padding: 35px 25px;
+        background: rgba(18, 18, 26, 0.75);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 0, 127, 0.3);
+        box-shadow: 0 0 25px rgba(255, 0, 127, 0.25),
+                    inset 0 0 15px rgba(0, 242, 254, 0.1);
+        backdrop-filter: blur(15px);
+        position: relative;
+        z-index: 1;
+    }
 
-        .container {
-            max-width: 500px;
-            width: 100%;
-            padding: 35px 25px;
-            background: rgba(18, 18, 26, 0.75);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 0, 127, 0.3);
-            box-shadow: 0 0 25px rgba(255, 0, 127, 0.25),
-                        inset 0 0 15px rgba(0, 242, 254, 0.1);
-            backdrop-filter: blur(15px);
-            position: relative;
-            z-index: 1;
-        }
+    .avatar-box {
+        position: relative;
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 20px auto;
+    }
 
-        /* Avatar de Perfil */
-        .avatar-box {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px auto;
-        }
+    .avatar-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 20px #ff007f;
+        border: 3px solid #ff007f;
+    }
 
-        .avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff007f, #00f2fe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: #fff;
-            box-shadow: 0 0 15px #ff007f;
-            border: 3px solid #0a0a0f;
-        }
+    .status-dot {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 16px;
+        height: 16px;
+        background-color: #00ff88;
+        border-radius: 50%;
+        border: 2px solid #0a0a0f;
+        box-shadow: 0 0 8px #00ff88;
+    }
 
-        .status-dot {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 16px;
-            height: 16px;
-            background-color: #00ff88;
-            border-radius: 50%;
-            border: 2px solid #0a0a0f;
-            box-shadow: 0 0 8px #00ff88;
-        }
+    h1 {
+        font-size: 2.4rem;
+        margin-bottom: 6px;
+        color: #fff;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px #ff007f,
+                     0 0 20px #ff007f;
+    }
 
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 6px;
-            color: #fff;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px #ff007f,
-                         0 0 20px #ff007f;
-        }
+    p.subtitle {
+        font-size: 1.1rem;
+        color: #00f2fe;
+        margin-bottom: 25px;
+        text-shadow: 0 0 10px #00f2fe;
+        font-weight: 500;
+    }
 
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #00f2fe;
-            margin-bottom: 25px;
-            text-shadow: 0 0 10px #00f2fe;
-            font-weight: 500;
-        }
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 20px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
+        border: 2px solid #ff007f;
+        background: rgba(255, 0, 127, 0.12);
+        box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
+        transition: all 0.3s ease;
+    }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 20px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            border: 2px solid #ff007f;
-            background: rgba(255, 0, 127, 0.12);
-            box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
-            transition: all 0.3s ease;
-        }
+    .btn:hover {
+        background: #ff007f;
+        box-shadow: 0 0 25px #ff007f;
+        transform: translateY(-2px);
+    }
 
-        .btn:hover {
-            background: #ff007f;
-            box-shadow: 0 0 25px #ff007f;
-            transform: translateY(-2px);
-        }
+    .btn-cyan {
+        border: 2px solid #00f2fe;
+        background: rgba(0, 242, 254, 0.12);
+        box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+    }
 
-        .btn-cyan {
-            border: 2px solid #00f2fe;
-            background: rgba(0, 242, 254, 0.12);
-            box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
-        }
+    .btn-cyan:hover {
+        background: #00f2fe;
+        color: #0a0a0f;
+        box-shadow: 0 0 25px #00f2fe;
+        transform: translateY(-2px);
+    }
 
-        .btn-cyan:hover {
-            background: #00f2fe;
-            color: #0a0a0f;
-            box-shadow: 0 0 25px #00f2fe;
-            transform: translateY(-2px);
-        }
+    .btn i {
+        font-size: 1.3rem;
+    }
 
-        .btn i {
-            font-size: 1.3rem;
-        }
-
-        footer {
-            margin-top: 25px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- Avatar de Perfil -->
-        <div class="avatar-box">
-            <div class="avatar">
-                <i class="fa-solid fa-crown"></i>
-            </div>
-            <div class="status-dot"></div>
-        </div>
-
-        <h1>Lenaa</h1>
-        <p class="subtitle">✨ Una Latina ✨</p>
-
-        <div class="links">
-            <!-- Tu Canal Oficial de YouTube -->
-            <a href="https://youtube.com/@lenaunalatina?si=9Ii8dE7uG76plkTY" class="btn" target="_blank">
-                <i class="fa-brands fa-youtube"></i> Mi Canal de YouTube
-            </a>
-
-            <!-- TikTok -->
-            <a href="https://tiktok.com" class="btn btn-cyan" target="_blank">
-                <i class="fa-brands fa-tiktok"></i> TikTok
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com" class="btn" target="_blank">
-                <i class="fa-brands fa-instagram"></i> Instagram
-            </a>
-
-            <!-- Spotify -->
-            <a href="https://spotify.com" class="btn btn-cyan" target="_blank">
-                <i class="fa-brands fa-spotify"></i> Mi Playlist / Spotify
-            </a>
-        </div>
-
-        <footer>
-            © Lenaa - Todos los derechos reservados
-        </footer>
+    footer {
+        margin-top: 25px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+</style>
+<div class="container">
+    <!-- Foto de Perfil -->
+    <div class="avatar-box">
+        <img src="profile.jpg" alt="Lenaa" class="avatar-img" onerror="this.src='https://via.placeholder.com/110/ff007f/ffffff?text=Lenaa'">
+        <div class="status-dot"></div>
     </div>
 
-</body>
-</html>
+    <h1>Lenaa</h1>
+    <p class="subtitle">✨ "Una Latina" ✨</p>
+
+    <div class="links">
+        <!-- Canal Oficial de YouTube -->
+        <a href="https://youtube.com/@lenaunalatina?si=9Ii8dE7uG76plkTY" class="btn" target="_blank">
+            <i class="fa-brands fa-youtube"></i> Mi Canal de YouTube
+        </a>
+
+        <!-- TikTok Oficial -->
+        <a href="https://vt.tiktok.
+com/ZSgA5Uwmm/" class="btn btn-cyan" target="_blank">
+            <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+
+        <!-- Spotify Oficial -->
+        <a href="https://open.spotify.com/artist/0C2Pe9NKm3NPAvkbn5iHto?si=5gJUm7pWS8aVl3nQ3cjiCw" class="btn" target="_blank">
+            <i class="fa-brands fa-spotify"></i> Mi Spotify
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" class="btn btn-cyan" target="_blank">
+            <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+    </div>
+
+    <footer>
+        © Lenaa - Todos los derechos reservados
+    </footer>
+</div>
