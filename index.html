@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenaa | Una Latina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0f;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 0, 128, 0.3);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.2),
+                        inset 0 0 15px rgba(0, 242, 254, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 0 10px #ff007f,
+                         0 0 20px #ff007f,
+                         0 0 40px #ff007f;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #00f2fe;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00f2fe;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px 25px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 2px solid #ff007f;
+            background: rgba(255, 0, 127, 0.1);
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff007f;
+            box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
+            transform: translateY(-3px);
+        }
+
+        .btn-cyan {
+            border-color: #00f2fe;
+            background: rgba(0, 242, 254, 0.1);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-cyan:hover {
+            background: #00f2fe;
+            color: #0a0a0f;
+            box-shadow: 0 0 20px #00f2fe, 0 0 40px #00f2fe;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>LENAA</h1>
+        <p class="subtitle">✨ Una Latina ✨</p>
+
+        <div class="links">
+            <a href="#" class="btn">Mi Portafolio</a>
+            <a href="#" class="btn btn-cyan">Proyectos</a>
+            <a href="#" class="btn">Contacto</a>
+        </div>
+
+        <footer>
+            © 2026 Lenaa-UnaLatina. Todos los derechos reservados.
+        </footer>
+    </div>
+
+</body>
+</html>
