@@ -1,42 +1,199 @@
-<!-- Gradiente Tarjeta RadioHit -->
-<linearGradient id="radioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" stop-color="#18181b"/>
-  <stop offset="100%" stop-color="#121214"/>
-</linearGradient>
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenaa Una Latina - Enlaces Oficiales</title>
 
-<!-- Sombras Neón -->
-<filter id="glowFuchsia" x="-20%" y="-20%" width="140%" height="140%">
-  <feGaussianBlur stdDeviation="6" result="blur" />
-  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-</filter>
-<text x="225" y="195" fill="#ffffff" font-size="22" font-weight="900" text-anchor="middle" letter-spacing="0.5">Lenaa Una Latina</text> <text x="225" y="214" fill="#a1a1aa" font-size="13" font-weight="500" text-anchor="middle">Locutora & Creadora</text>
-<!-- En Cabina Texto -->
-<text x="25" y="32" fill="#ffffff" font-size="15" font-weight="900" letter-spacing="0.5">EN CABINA:</text>
-<text x="25" y="48" fill="#ffffff" font-size="13" font-weight="800">UNA LATINA</text>
-<text x="25" y="62" fill="#ffffff" font-size="13" font-weight="800">EN RADIOHIT</text>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Logo RadioHit -->
-<text x="355" y="45" fill="#d946ef" font-size="20" font-weight="900" text-anchor="end">RADIO<tspan fill="#84cc16">HIT</tspan></text>
+  <!-- FontAwesome 6 CDN (Íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Banner Inferior Verde/Fuchsia -->
-<rect x="15" y="68" width="350" height="20" rx="4" fill="#d946ef"/>
-<text x="190" y="83" fill="#84cc16" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="1">¡UN GOLPE DE MÚSICA!</text>
-<text x="225" y="370" fill="#f472b6" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" filter="url(#glowFuchsia)">"No dejes de sonreír por nada ni por nadie"</text>
-<!-- Spotify -->
-<rect x="198" y="0" width="182" height="46" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-<circle cx="222" cy="23" r="10" fill="#1db954"/>
-<text x="240" y="22" fill="#ffffff" font-size="11" font-weight="bold">SPOTIFY</text>
-<text x="240" y="33" fill="#a1a1aa" font-size="9">MÚSICA</text>
-<!-- Instagram -->
-<rect x="198" y="0" width="182" height="46" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-<rect x="212" y="15" width="16" height="16" rx="4" fill="none" stroke="#e1306c" stroke-width="2"/>
-<text x="240" y="28" fill="#ffffff" font-size="11" font-weight="bold">INSTAGRAM</text>
-<!-- TikTok -->
-<rect x="198" y="0" width="182" height="46" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-<text x="214" y="29" fill="#00f2fe" font-size="14">🎵</text>
-<text x="240" y="28" fill="#ffffff" font-size="11" font-weight="bold">TIKTOK</text>
-<!-- Apple Music -->
-<rect x="198" y="0" width="182" height="46" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-<text x="214" y="29" fill="#fc3c44" font-size="14">🍎</text>
-<text x="240" y="28" fill="#ffffff" font-size="11" font-weight="bold">APPLE MUSIC</text>
-<text x="225" y="800" fill="#71717a" font-size="10" text-anchor="middle">© 2026 Lenaa Una Latina. Todos los derechos reservados.</text> </svg>
+  <!-- Google Fonts: Montserrat & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            serifQuote: ['"Playfair Display"', 'serif']
+          },
+          colors: {
+            radiohit: {
+              magenta: '#D946EF',
+              purple: '#A21CAF',
+              lime: '#84CC16',
+              darklime: '#4D7C0F'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Efecto Neón Fuchsia */
+    .glow-fuchsia {
+      box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
+    }
+    .glow-border {
+      border-color: #D946EF;
+      box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white font-montserrat min-h-full flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-fuchsia-500 selection:text-white">
+
+  <!-- Glow de Fondo -->
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Contenedor Principal -->
+  <main class="w-full max-w-md mx-auto flex flex-col items-center gap-6 relative z-10">
+
+    <!-- Badge México -->
+    <div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-zinc-300 backdrop-blur-md">
+      <span>🇲🇽</span>
+      <span>MÉXICO</span>
+    </div>
+
+    <!-- Foto de Perfil con Badge ON AIR -->
+    <div class="relative group mt-1">
+      <div class="w-28 h-28 rounded-full p-1 border-2 border-fuchsia-500 glow-border bg-zinc-900 overflow-hidden flex items-center justify-center">
+        <!-- Usa la imagen de tu repositorio -->
+        <img src="foto_2026-10-20_12-12-36.jpg" alt="Lenaa Una Latina" class="w-full h-full object-cover rounded-full">
+      </div>
+      <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-lg shadow-red-900/50 border border-red-500">
+        ON AIR
+      </span>
+    </div>
+
+    <!-- Título y Subtítulo -->
+    <div class="text-center space-y-1">
+      <h1 class="text-2xl font-black tracking-tight text-white drop-shadow-md">
+        Lenaa Una Latina
+      </h1>
+      <p class="text-xs font-medium text-zinc-400 tracking-wide uppercase">
+        Locutora &amp; Creadora
+      </p>
+    </div>
+
+    <!-- Tarjeta Estática RadioHit (Sin Botón) -->
+    <div class="w-full bg-zinc-900/90 border border-fuchsia-500/60 rounded-2xl p-4 flex flex-col gap-3 backdrop-blur-md glow-fuchsia relative overflow-hidden">
+      <!-- Glow de fondo tarjeta -->
+      <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-radiohit-lime/10 rounded-full blur-2xl"></div>
+
+      <div class="flex items-center justify-between gap-2 relative z-10">
+        <div class="flex flex-col">
+          <span class="text-white font-black text-sm tracking-wide leading-tight uppercase">
+            EN CABINA:
+          </span>
+          <span class="text-white font-extrabold text-xs tracking-wider leading-tight uppercase">
+            UNA LATINA EN RADIOHIT
+          </span>
+        </div>
+        <div class="text-right">
+          <span class="text-radiohit-magenta font-black text-xl tracking-tighter filter drop-shadow">
+            RADIO<span class="text-radiohit-lime">HIT</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="w-full bg-radiohit-magenta text-radiohit-lime font-black text-center text-xs py-1.5 rounded-lg tracking-widest uppercase shadow-md shadow-fuchsia-950">
+        ¡UN GOLPE DE MÚSICA!
+      </div>
+    </div>
+
+    <!-- Frase Limpia Gigante -->
+    <div class="w-full text-center py-2 px-2">
+      <p class="font-serifQuote italic text-fuchsia-400 font-bold text-2xl leading-snug drop-shadow-lg">
+        "No dejes de sonreír por nada ni por nadie"
+      </p>
+    </div>
+
+    <!-- Grid de Botones de Redes Sociales (Letras Grandes) -->
+    <div class="w-full grid grid-cols-2 gap-3">
+
+      <!-- 1. Ellona e Inmamable -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-fuchsia-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-fire text-sm"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">ELLONA E INMAMABLE</span>
+      </a>
+
+      <!-- 2. Spotify -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-spotify text-base"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-xs text-white leading-tight">SPOTIFY</span>
+          <span class="text-[10px] text-zinc-400 font-medium">MÚSICA</span>
+        </div>
+      </a>
+
+      <!-- 3. YouTube -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-red-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-youtube text-sm"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">YOUTUBE</span>
+      </a>
+
+      <!-- 4. Instagram -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-pink-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-instagram text-base"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">INSTAGRAM</span>
+      </a>
+
+      <!-- 5. Ko-fi -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-amber-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-mug-hot text-xs"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">KO-FI</span>
+      </a>
+
+      <!-- 6. TikTok -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-cyan-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-tiktok text-sm"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">TIKTOK</span>
+      </a>
+
+      <!-- 7. X (Twitter) -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-zinc-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-zinc-800 text-zinc-200 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-x-twitter text-sm"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">X (TWITTER)</span>
+      </a>
+
+      <!-- 8. Apple Music -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-rose-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+        <div class="w-7 h-7 rounded-full bg-rose-600/20 text-rose-500 flex items-center justify-center shrink-0">
+          <i class="fa-brands fa-apple text-base"></i>
+        </div>
+        <span class="font-bold text-xs text-white leading-tight">APPLE MUSIC</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de página con Derechos Reservados -->
+  <footer class="mt-12 text-center text-[11px] text-zinc-500 font-medium tracking-wide relative z-10">
+    © 2026 Lenaa Una Latina. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
