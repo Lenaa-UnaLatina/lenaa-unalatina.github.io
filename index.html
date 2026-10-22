@@ -14,7 +14,7 @@
   <!-- Google Fonts: Montserrat & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -38,13 +38,21 @@
   </script>
 
   <style>
-    /* Efecto Neón Fuchsia */
+    /* Glow general de neón */
     .glow-fuchsia {
-      box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
+      box-shadow: 0 0 25px rgba(217, 70, 239, 0.35);
     }
     .glow-border {
       border-color: #D946EF;
-      box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);
+      box-shadow: 0 0 18px rgba(217, 70, 239, 0.5);
+    }
+    /* Animación de pulso para EN VIVO */
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.15); }
+    }
+    .animate-live-dot {
+      animation: pulse-red 1.8s infinite ease-in-out;
     }
   </style>
 </head>
@@ -57,140 +65,157 @@
   <main class="w-full max-w-md mx-auto flex flex-col items-center gap-6 relative z-10">
 
     <!-- Badge México -->
-    <div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-zinc-300 backdrop-blur-md">
-      <span>🇲🇽</span>
+    <div class="inline-flex items-center gap-2 bg-zinc-900/90 border border-zinc-700/80 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider text-white backdrop-blur-md shadow-lg shadow-black/50">
+      <span class="text-base">🇲🇽</span>
       <span>MÉXICO</span>
     </div>
 
     <!-- Foto de Perfil con Badge ON AIR -->
     <div class="relative group mt-1">
       <div class="w-28 h-28 rounded-full p-1 border-2 border-fuchsia-500 glow-border bg-zinc-900 overflow-hidden flex items-center justify-center">
-        <!-- Usa la imagen de tu repositorio -->
         <img src="foto_2026-10-20_12-12-36.jpg" alt="Lenaa Una Latina" class="w-full h-full object-cover rounded-full">
       </div>
-      <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-lg shadow-red-900/50 border border-red-500">
+      <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full tracking-widest uppercase shadow-lg shadow-red-900/60 border border-red-500">
         ON AIR
       </span>
     </div>
 
-    <!-- Título y Subtítulo -->
-    <div class="text-center space-y-1">
+    <!-- Título y Biografía -->
+    <div class="text-center space-y-2 px-2">
       <h1 class="text-2xl font-black tracking-tight text-white drop-shadow-md">
         Lenaa Una Latina
       </h1>
-      <p class="text-xs font-medium text-zinc-400 tracking-wide uppercase">
-        Locutora &amp; Creadora
+      <p class="text-sm font-medium text-zinc-200 leading-relaxed max-w-xs mx-auto drop-shadow-sm">
+        Cantante, Interprete, músico, poeta, locutora/dj, presentadora, productora y manager por hobbie y mucho más pero no cabe aquí. 💋
       </p>
     </div>
 
-    <!-- Tarjeta Estática RadioHit (Sin Botón) -->
-    <div class="w-full bg-zinc-900/90 border border-fuchsia-500/60 rounded-2xl p-4 flex flex-col gap-3 backdrop-blur-md glow-fuchsia relative overflow-hidden">
-      <!-- Glow de fondo tarjeta -->
+    <!-- Tarjeta Estática RadioHit -->
+    <div class="w-full bg-zinc-900/90 border border-fuchsia-500/70 rounded-2xl p-4 flex flex-col gap-3 backdrop-blur-md glow-fuchsia relative overflow-hidden">
       <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-radiohit-lime/10 rounded-full blur-2xl"></div>
 
-      <div class="flex items-center justify-between gap-2 relative z-10">
-        <div class="flex flex-col">
-          <span class="text-white font-black text-sm tracking-wide leading-tight uppercase">
-            EN CABINA:
-          </span>
-          <span class="text-white font-extrabold text-xs tracking-wider leading-tight uppercase">
-            UNA LATINA EN RADIOHIT
-          </span>
-        </div>
-        <div class="text-right">
-          <span class="text-radiohit-magenta font-black text-xl tracking-tighter filter drop-shadow">
-            RADIO<span class="text-radiohit-lime">HIT</span>
-          </span>
-        </div>
+      <div class="text-center relative z-10 py-1">
+        <span class="text-zinc-300 font-medium text-xs tracking-wider uppercase block mb-0.5">
+          EN CABINA
+        </span>
+        <span class="text-white font-black text-base tracking-wide leading-tight uppercase block">
+          UNA LATINA EN RADIOHIT
+        </span>
       </div>
 
-      <div class="w-full bg-radiohit-magenta text-radiohit-lime font-black text-center text-xs py-1.5 rounded-lg tracking-widest uppercase shadow-md shadow-fuchsia-950">
+      <div class="w-full bg-radiohit-magenta text-radiohit-lime font-black text-center text-xs py-2 rounded-lg tracking-widest uppercase shadow-md shadow-fuchsia-950">
         ¡UN GOLPE DE MÚSICA!
       </div>
     </div>
 
-    <!-- Frase Limpia Gigante -->
-    <div class="w-full text-center py-2 px-2">
+    <!-- MÓDULO Opcional EN VIVO (Comentar/Descomentar para mostrar u ocultar) -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-red-950/80 via-zinc-900/90 to-red-950/80 border-2 border-red-600 rounded-2xl p-3.5 flex items-center justify-between backdrop-blur-md shadow-lg shadow-red-950/50 hover:scale-[1.02] transition-transform">
+      <div class="flex items-center gap-3">
+        <span class="w-3.5 h-3.5 rounded-full bg-red-500 animate-live-dot border-2 border-white"></span>
+        <div class="flex flex-col">
+          <span class="font-black text-sm text-white tracking-wider">🔴 EN VIVO AHORA</span>
+          <span class="text-[11px] text-zinc-300">¡Acompáñame en la transmisión!</span>
+        </div>
+      </div>
+      <span class="bg-red-600 text-white font-extrabold text-xs px-3 py-1.5 rounded-lg uppercase tracking-wide shadow-md">
+        Entrar
+      </span>
+    </a>
+
+    <!-- Frase Limpia -->
+    <div class="w-full text-center py-1 px-2">
       <p class="font-serifQuote italic text-fuchsia-400 font-bold text-2xl leading-snug drop-shadow-lg">
         "No dejes de sonreír por nada ni por nadie"
       </p>
     </div>
 
-    <!-- Grid de Botones de Redes Sociales (Letras Grandes) -->
-    <div class="w-full grid grid-cols-2 gap-3">
+    <!-- Grid de Botones con Colores Modernos y Letras Grandes -->
+    <div class="w-full grid grid-cols-2 gap-3.5">
 
       <!-- 1. Ellona e Inmamable -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-fuchsia-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-fire text-sm"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-fuchsia-500/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-fuchsia-950/40">
+        <div class="w-10 h-10 rounded-full bg-purple-900/80 border border-fuchsia-400/60 overflow-hidden flex items-center justify-center shrink-0 shadow-sm">
+          <svg viewBox="0 0 100 100" class="w-full h-full">
+            <rect width="100" height="100" fill="#18181b"/>
+            <!-- Cabello Rosa -->
+            <path d="M 20 50 C 20 20, 80 20, 80 50 C 80 75, 75 80, 70 80 C 65 80, 65 65, 65 60 C 65 50, 35 50, 35 60 C 35 65, 35 80, 30 80 C 25 80, 20 75, 20 50 Z" fill="#F472B6"/>
+            <!-- Cara Morada -->
+            <ellipse cx="50" cy="55" rx="22" ry="24" fill="#A855F7"/>
+            <!-- Lentes Negros -->
+            <rect x="32" y="48" width="16" height="10" rx="3" fill="#000000"/>
+            <rect x="52" y="48" width="16" height="10" rx="3" fill="#000000"/>
+            <line x1="48" y1="52" x2="52" y2="52" stroke="#000000" stroke-width="2"/>
+            <!-- Sonrisa -->
+            <path d="M 43 67 Q 50 72 57 67" stroke="#F472B6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">ELLONA E INMAMABLE</span>
+        <span class="font-black text-sm text-white leading-tight">ELLONA E INMAMABLE</span>
       </a>
 
       <!-- 2. Spotify -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-spotify text-base"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-emerald-500/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-emerald-950/40">
+        <div class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 shadow-sm border border-emerald-500/40">
+          <i class="fa-brands fa-spotify text-2xl"></i>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-xs text-white leading-tight">SPOTIFY</span>
-          <span class="text-[10px] text-zinc-400 font-medium">MÚSICA</span>
+          <span class="font-black text-sm text-white leading-tight">SPOTIFY</span>
+          <span class="text-[11px] text-emerald-400 font-black">MÚSICA</span>
         </div>
       </a>
 
       <!-- 3. YouTube -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-red-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-youtube text-sm"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-red-500/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-red-950/40">
+        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center shrink-0 shadow-sm border border-red-500/40">
+          <i class="fa-brands fa-youtube text-lg"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">YOUTUBE</span>
+        <span class="font-black text-sm text-white leading-tight">YOUTUBE</span>
       </a>
 
       <!-- 4. Instagram -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-pink-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-instagram text-base"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-pink-500/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-pink-950/40">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+          <i class="fa-brands fa-instagram text-xl"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">INSTAGRAM</span>
+        <span class="font-black text-sm text-white leading-tight">INSTAGRAM</span>
       </a>
 
       <!-- 5. Ko-fi -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-amber-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-mug-hot text-xs"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-rose-400/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-rose-950/40">
+        <div class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 shadow-sm border border-rose-400/40">
+          <i class="fa-solid fa-mug-hot text-base"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">KO-FI</span>
+        <span class="font-black text-sm text-white leading-tight">KO-FI</span>
       </a>
 
       <!-- 6. TikTok -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-cyan-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-tiktok text-sm"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-cyan-400/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-cyan-950/40">
+        <div class="w-9 h-9 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 shadow-sm border border-cyan-400/40">
+          <i class="fa-brands fa-tiktok text-lg"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">TIKTOK</span>
+        <span class="font-black text-sm text-white leading-tight">TIKTOK</span>
       </a>
 
       <!-- 7. X (Twitter) -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-zinc-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-zinc-800 text-zinc-200 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-x-twitter text-sm"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-zinc-600/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-zinc-950/40">
+        <div class="w-9 h-9 rounded-full bg-zinc-800 text-zinc-200 flex items-center justify-center shrink-0 shadow-sm border border-zinc-600/50">
+          <i class="fa-brands fa-x-twitter text-lg"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">X (TWITTER)</span>
+        <span class="font-black text-sm text-white leading-tight">X (TWITTER)</span>
       </a>
 
       <!-- 8. Apple Music -->
-      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800/90 border border-zinc-800/80 hover:border-rose-500/50 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
-        <div class="w-7 h-7 rounded-full bg-rose-600/20 text-rose-500 flex items-center justify-center shrink-0">
-          <i class="fa-brands fa-apple text-base"></i>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-zinc-900/90 hover:bg-zinc-800 border-2 border-rose-500/70 p-3.5 rounded-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shadow-rose-950/40">
+        <div class="w-9 h-9 rounded-full bg-rose-600/20 text-rose-500 flex items-center justify-center shrink-0 shadow-sm border border-rose-500/40">
+          <i class="fa-brands fa-apple text-xl"></i>
         </div>
-        <span class="font-bold text-xs text-white leading-tight">APPLE MUSIC</span>
+        <span class="font-black text-sm text-white leading-tight">APPLE MUSIC</span>
       </a>
 
     </div>
 
   </main>
 
-  <!-- Pie de página con Derechos Reservados -->
+  <!-- Pie de página -->
   <footer class="mt-12 text-center text-[11px] text-zinc-500 font-medium tracking-wide relative z-10">
     © 2026 Lenaa Una Latina. Todos los derechos reservados.
   </footer>
